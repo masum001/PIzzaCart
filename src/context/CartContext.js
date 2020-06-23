@@ -5,9 +5,9 @@ import { cartReducer } from '../reducer/cartReducer'
 export const CartContext = createContext()
 
 const CartContextProvider=( props )=>{
-   const [ pizzas, dispatch ] = useReducer(cartReducer, pizzaList)
-   const [ cartItems, setCartItems ] = useState([ 
-       {id: 1, name: "Chicago Pizza", price: 9, Qty: 1} 
+    const [ pizzas ] = useState(pizzaList)
+    const [ cartItems, dispatch ] = useReducer(cartReducer,[ 
+        
        //hello 
    ])
 

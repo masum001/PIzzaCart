@@ -6,7 +6,7 @@ export const CartContext = createContext()
 
 const CartContextProvider=( props )=>{
    const [ pizzas, dispatch ] = useReducer(cartReducer, pizzaList)
-   const [ cartItems, setCartItems ] = useState([ 
+   const [ cartItems, dispatch ] = useReducer(cartReducer,[ 
        {id: 1, name: "Chicago Pizza", price: 9, Qty: 1} 
        //hello 
    ])

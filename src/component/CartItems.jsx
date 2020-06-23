@@ -6,18 +6,23 @@ import { Container, Row} from 'react-bootstrap'
 function CartItems() {
  
     const { cartItems  } = useContext(CartContext);
-    console.log(cartItems)
+    
+    const grandTotal = cartItems.reduce( (total, cartItem )=>(
+        total + cartItem.price * cartItem.Qty
+    ), 0)
     
     return (
-        <Container>
+        <div>
        
         {cartItems.map(cartItem=>(
             
               <CartDetails cartItem={cartItem} key ={cartItem.id} />
            
           ))}
+
+          <h3>Grand Total {parseFloat(grandTotal)}</h3>
         
-      </Container>
+      </div>
     )
 }
 

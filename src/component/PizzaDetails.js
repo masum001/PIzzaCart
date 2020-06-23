@@ -4,12 +4,17 @@ import { CartContext } from '../context/CartContext'
 
 function PizzaDetails({ pizza }) {
 
-    const { dispatch } = useContext(CartContext);
-    const addPizza = () =>(dispatch({type: 'ADD_PIZZA', pizza: {
+    const { dispatch ,cartItems } = useContext(CartContext);
+    const addPizza = () =>
+        { 
+            let index = cartItems.findIndex(item=> item.id===parseInt(pizza.id))
+            console.log(index)
+        dispatch({type: 'ADD_PIZZA', pizza: {
         name: pizza.name,
-        price: pizza.price
-    }}))
-
+        price: parseFloat(pizza.price),
+        Qty: pizza.Qty
+    }})}
+    
     return (
         <Card className="h-100 shadow-sm bg-white rounded">
             <Card.Img variant='top' src={pizza.image} />
