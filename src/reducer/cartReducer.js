@@ -5,7 +5,7 @@ export const cartReducer=( cartItems, action )=>{
             // console.log(action.pizza.price)
             // console.log(action.pizza.Qty)
             return [...cartItems, {
-                id : new Date().getUTCMilliseconds(),
+                id : action.pizza.id,
                 name: action.pizza.name,
                 price: parseFloat(action.pizza.price),
                 Qty: parseInt(action.pizza.Qty)

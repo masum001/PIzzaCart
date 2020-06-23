@@ -14,9 +14,9 @@ function CartItems() {
     return (
         <div>
        
-        {cartItems.map(cartItem=>(
+        {cartItems.map((cartItem, index)=>(
             
-              <CartDetails cartItem={cartItem} key ={cartItem.id} />
+              <CartDetails cartItem={cartItem} key={index} />
            
           ))}
 
